@@ -1,0 +1,26 @@
+<div class="text-2xl font-bold mb-4">
+    <div class="bg-gray-200 rounded-md mt-5 mb-5 p-4 w-full">
+        <div class="text-center">
+            <h2 class="text-2xl font-bold">Todo</h2>
+        </div>
+    </div>
+</div>
+
+<div class="overflow-x-auto">
+  <table class="w-full table-auto border-collapse">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="px-4 py-2">To-Do Task List</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @list.each do |f| %>
+        <tr class="border-b">
+          <td class="px-4 py-2"><%= f.task %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
