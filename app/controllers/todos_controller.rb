@@ -16,6 +16,10 @@ class TodosController < ApplicationController
         end
     end
 
+    def edit
+        @task = Todo.find(params[:id])
+    end
+
 
     private
 
