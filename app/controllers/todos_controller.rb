@@ -10,7 +10,7 @@ class TodosController < ApplicationController
     def create
         @task = Todo.new(task_params)
         if @task.save 
-            redirect_to todos_path
+            redirect_to todos_path, notice: 'Task has been created sucessfully'
         else
             render :new
         end
@@ -18,6 +18,15 @@ class TodosController < ApplicationController
 
     def edit
         @task = Todo.find(params[:id])
+    end
+
+    def update
+        @task = Todo.find(params[:id])
+        if @task.update(task_params)
+            redirect_to todos_path, notice: 'Task has been updated sucessfully'
+        else
+            render :edit
+        end
     end
 
 

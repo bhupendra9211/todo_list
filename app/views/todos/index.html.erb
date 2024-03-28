@@ -1,3 +1,4 @@
+<%= flash[:notice] %>
 <div class="text-2xl font-bold mb-4">
     <div class="bg-gray-200 rounded-md mt-5 mb-5 p-4 w-full">
         <div class="text-center">
@@ -5,7 +6,6 @@
         </div>
     </div>
 </div>
-
 <%= link_to 'Add Task', new_todo_path, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg text-lg' %>
 
 <div class="overflow-x-auto">
