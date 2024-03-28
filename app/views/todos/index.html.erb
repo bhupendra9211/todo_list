@@ -6,11 +6,13 @@
     </div>
 </div>
 
+<%= link_to 'Add Task', new_todo_path %>
 <div class="overflow-x-auto">
   <table class="w-full table-auto border-collapse">
     <thead>
       <tr class="bg-gray-200">
         <th class="px-4 py-2">To-Do Task List</th>
+        <th class="px-4 py-2">Action</th>
       </tr>
     </thead>
 
@@ -18,9 +20,15 @@
       <% @list.each do |f| %>
         <tr class="border-b">
           <td class="px-4 py-2"><%= f.task %></td>
+          <td class="px-4 py-2"><%= f.task %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
+
+
+
+
+
 
