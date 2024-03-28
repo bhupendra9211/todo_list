@@ -29,6 +29,13 @@ class TodosController < ApplicationController
         end
     end
 
+    def destroy
+        @task = Todo.find(params[:id])
+        if @task.destroy
+            redirect_to todos_path, notice: 'Task has bee destroy sucessfully'
+        end
+    end
+
 
     private
 
