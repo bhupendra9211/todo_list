@@ -1,7 +1,7 @@
 <div class="max-w-md mx-auto">
   <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
     <h2 class="text-xl font-bold mb-4">Task Form</h2>
-    <%= form_for @list, url: todos_path, html: { class: "form" } do |f| %>
+    <%= form_for @task, url: todos_path, html: { class: "form" } do |f| %>
       <div class="mb-4">
         <%= f.label :task, class: "block text-gray-700 text-sm font-bold mb-2" %>
         <%= f.text_field :task, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
