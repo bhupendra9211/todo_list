@@ -1,6 +1,7 @@
 class TodosController < ApplicationController
+    before_action :set_task, only: [:edit, :update, :destroy]
     def index
-        @task=Todo.all
+        @tasks=Todo.all
     end
 
     def new
@@ -10,7 +11,7 @@ class TodosController < ApplicationController
     def create
         @task = Todo.new(task_params)
         if @task.save 
-            redirect_to todos_path, notice: 'Task has been created sucessfully'
+            redirect_to root_path, notice: 'Task has been created sucessfully'
         else
             render :new
         end
@@ -23,7 +24,7 @@ class TodosController < ApplicationController
     def update
         @task = Todo.find(params[:id])
         if @task.update(task_params)
-            redirect_to todos_path, notice: 'Task has been updated sucessfully'
+            redirect_to root_path, notice: 'Task has been updated sucessfully'
         else
             render :edit
         end
@@ -32,12 +33,16 @@ class TodosController < ApplicationController
     def destroy
         @task = Todo.find(params[:id])
         if @task.destroy
-            redirect_to todos_path, notice: 'Task has bee destroy sucessfully'
+            redirect_to root_path, notice: 'Task has bee destroy sucessfully'
         end
     end
 
 
     private
+
+    def set_task
+        @task = Todo.find(params[:id])
+      end
 
     def task_params
         params.require(:todo).permit(:task)
